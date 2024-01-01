@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import {Video} from "./Video"
 
 
+//ACCESS ENVIRONMENT VARIABLES
+const apiKey = import.meta.env.VITE_API_KEY
 
-
-
-function Videos({apiKey}) {
+function Videos() {
     const [videos, setVideos] = useState([]);
 
     useEffect( () => {

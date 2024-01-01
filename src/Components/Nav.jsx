@@ -1,19 +1,13 @@
-import "../App.css"
+import "../styles.css"
 import { Profile } from "./Profile";
 
 function Nav() {
-    const style = {
-        color: "#FF0000",
-        fontSize: "30px",
-        fontWeight: "bold",
-    }
     return ( 
-            <div style={{        display: "flex", justifyContent: "center",
-            alignItems: "center"}}>
-                <div style={{width: "24px", height: "24px"}}>
+            <div>
+                <div            >
                     ham
                 </div>
-                <span className="logo" style={style}>metube</span>
+                <div><span className="logo">metube</span></div>
                 <Profile />
             </div>
      );

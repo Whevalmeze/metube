@@ -1,26 +1,17 @@
 import "./styles.css"
-import './App.css'
-import Nav from './Components/Nav'
-import Videos from "./Components/Videos"
+import Homepage from './pages/Homepage'
+import AuthPage from "./pages/AuthPage.jsx"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
-//ACCESS ENVIRONMENT VARIABLES
-const apiKey = import.meta.env.VITE_API_KEY
-
-const styling = {
-  color : {
-    primaryRed: "#FF0000",
-    secondaryBlack: "#282828"
-  }
-}
 
 function App() {
-  console.log(apiKey)
   return (
-    <>
-      <Nav styling={styling} />
-      <Videos apiKey={apiKey} />
-    </>
+    <Router>
+      <Routes>
+          <Route  path="/" element={<Homepage/>} />
+          <Route  path="/sign-in" element={<AuthPage/>} />
+      </Routes>   
+    </Router>
   )
 }
 
