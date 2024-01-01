@@ -1,6 +1,11 @@
+import "./styles.css"
 import './App.css'
 import Nav from './Components/Nav'
 import Videos from "./Components/Videos"
+
+
+//ACCESS ENVIRONMENT VARIABLES
+const apiKey = import.meta.env.VITE_API_KEY
 
 const styling = {
   color : {
@@ -10,10 +15,11 @@ const styling = {
 }
 
 function App() {
+  console.log(apiKey)
   return (
     <>
       <Nav styling={styling} />
-      <Videos />
+      <Videos apiKey={apiKey} />
     </>
   )
 }

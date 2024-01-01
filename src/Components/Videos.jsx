@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import {Video} from "./Video"
 
-const API_KEY = "AIzaSyBAxIpTPsTgU0hCbFOa2K7oiEUg-s0V6SA";
-const ID= "Ks-_Mh1QhMc";
 
 
 
-function Videos() {
+
+function Videos({apiKey}) {
     const [videos, setVideos] = useState([]);
 
     useEffect( () => {
-        fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=US&key=${API_KEY}`)
+        fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=US&key=${apiKey}`)
             .then(response => response.json())
             .then(data => setVideos(data.items))
             .catch(err => console.error("Error: ", err))
