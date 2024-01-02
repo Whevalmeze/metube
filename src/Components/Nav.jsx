@@ -1,14 +1,17 @@
-import "../styles.css"
 import { Profile } from "./Profile";
+import Logo from "./Logo"
+import { Link } from "react-router-dom";
 
 function Nav() {
     return ( 
-            <div>
-                <div            >
-                    ham
-                </div>
-                <div><span className="logo">metube</span></div>
-                <Profile />
+            <div className="flex justify-between w-full max-w-screen-lg p-8">
+                <Link to="./sign-in">
+                    <div>
+                        ham
+                    </div>
+                </Link>
+                <div><Logo /></div>
+                <div><Profile /></div>
             </div>
      );
 }

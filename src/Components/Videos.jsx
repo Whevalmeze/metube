@@ -7,6 +7,7 @@ const apiKey = import.meta.env.VITE_API_KEY
 
 function Videos() {
     const [videos, setVideos] = useState([]);
+    const [loading, setLoading] = useState("false");
 
     useEffect( () => {
         fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=US&key=${apiKey}`)
@@ -19,16 +20,8 @@ function Videos() {
 
     return ( 
         <div>
-            <div>
-                <ul style={{
-                    display: "grid",
-                    justifyItems: "center",
-                    gridTemplateColumns: "1fr 1fr 1fr 1fr",
-                    gridTemplateRows: "auto",
-                    gap: 0,
-                    listStyleType: "none",
-                    padding: 0
-            }}>
+            <div className="w-full max-w-screen-lg">
+                <ul className="grid grid-cols-4">
                     {
                         videos.length >= 1 && videos.map(video => (
                                 <li key={video}><Video key={video.id} title={video.snippet.title} imgSrc={video.snippet.thumbnails.high.url}  /></li> 

@@ -1,4 +1,4 @@
-import "./styles.css"
+import "../output.css"
 import Homepage from './pages/Homepage'
 import AuthPage from "./pages/AuthPage.jsx"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
